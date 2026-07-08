@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>JIREH — Loja Cristã de Roupas</title>
+        <link rel="stylesheet" href="jire.css">
+    </head>
+
+    <body>
+        <header class="site-header">
+            <div class="container header-inner">
+                <div class="brand">
+                    <h1>JIREH</h1>
+                    <p class="tagline">Vestindo fé, espalhando amor</p>
+                </div>
+                <div class="trust">Entrega segura • Pagamento protegido</div>
+            </div>
+            <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">☰<span class="sr-only">Abrir menu</span></button>
+            <nav id="primary-menu" aria-label="Principal" class="main-nav">
+                <ul>
+                    <li><a href="inicio.html">Início</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="roupa.html">Roupas</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="container hero-inner">
+                    <div class="hero-content">
+                        <h2>Nova coleção: Fé & Esperança</h2>
+                        <p>Peças com mensagens cristãs, materiais confortáveis e design contemporâneo.</p>
+                        <a class="btn" href="produtos.html">Ver produtos</a>
+                    </div>
+                    <div class="hero-art">
+                        <img alt="Coleção Fé" src="https://placehold.co/600x400?text=Coleção+Fé" />
+                    </div>
+                </div>
+            </section>
+
+            <section class="products container" aria-labelledby="destaques">
+                <h3 id="destaques">Destaques</h3>
+                <div class="product-grid" id="product-grid" aria-live="polite"></div>
+            </section>
+
+            <section id="sobre" class="about container">
+                <h3>Sobre a JIREH</h3>
+                <p>JIREH é uma marca de roupas com propósito: divulgar valores cristãos através de moda acessível e de qualidade.</p>
+            </section>
+
+            <section class="categories container">
+                <h3>Categorias</h3>
+                <ul class="category-list">
+                    <li>Camisas</li>
+                    <li>Moletom</li>
+                    <li>Bonés</li>
+                    <li>Acessórios</li>
+                </ul>
+            </section>
+
+            <section class="newsletter container" aria-label="Newsletter">
+                <h3>Receba novidades</h3>
+                <form id="newsletter-form">
+                    <label for="email">E-mail</label>
+                    <input id="email" type="email" placeholder="seu@exemplo.com" required>
+                    <button class="btn" type="submit">Inscrever</button>
+                </form>
+            </section>
+        </main>
+
+        <footer id="contato">
+            <div class="container footer-inner">
+                <div>
+                    <h4>JIREH</h4>
+                    <p>© 2026 JIREH — Todos os direitos reservados</p>
+                </div>
+                <div>
+                    <p>Contato: contato@jireh.loja | (11) 99999-9999</p>
+                    <p class="social">Siga-nos: Instagram • Facebook</p>
+                </div>
+            </div>
+        </footer>
+
+        <script src="script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Roupas — JIREH</title>
+        <link rel="stylesheet" href="jire.css">
+    </head>
+    <body>
+        <header class="site-header">
+            <div class="container header-inner">
+                <div class="brand">
+                    <h1>JIREH</h1>
+                    <p class="tagline">Coleção de Roupas</p>
+                </div>
+            </div>
+            <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">☰<span class="sr-only">Abrir menu</span></button>
+            <nav id="primary-menu" aria-label="Principal" class="main-nav">
+                <ul>
+                    <li><a href="inicio.html">Início</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="roupa.html">Roupas</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="container">
+                <h2>Roupas</h2>
+                <p>Seleção curada de camisetas e moletons com mensagens cristãs.</p>
+
+                <!-- Renderiza apenas categoria 'camiseta' e 'moletom' nesta página -->
+                <div class="tabs">
+                    <button class="btn" data-cat="camiseta">Camisetas</button>
+                    <button class="btn" data-cat="moletom">Moletons</button>
+                </div>
+
+                <div class="product-grid" id="product-grid-roupa" data-category="camiseta" aria-live="polite"></div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="container footer-inner">
+                <div>
+                    <h4>JIREH</h4>
+                    <p>© 2026 JIREH</p>
+                </div>
+                <div>
+                    <p>Todos os direitos reservados</p>
+                </div>
+            </div>
+        </footer>
+
+        <script src="script.js"></script>
+        <script>
+            // Troca de categoria via tabs
+            document.querySelectorAll('.tabs button').forEach(btn => {
+                btn.addEventListener('click', function(){
+                    const cat = this.getAttribute('data-cat');
+                    const grid = document.getElementById('product-grid-roupa');
+                    if(!grid || !window.products) return;
+                    renderProducts(grid, window.products, cat);
+                });
+            });
+        </script>
+    </body>
+
+</html>

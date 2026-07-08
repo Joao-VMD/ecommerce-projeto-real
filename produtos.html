@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Produtos — JIREH</title>
+        <link rel="stylesheet" href="jire.css">
+    </head>
+
+    <body>
+        <!-- Cabeçalho com navegação principal -->
+        <header class="site-header">
+            <div class="container header-inner">
+                <div class="brand">
+                    <h1>JIREH</h1>
+                    <p class="tagline">Catálogo completo de peças cristãs</p>
+                </div>
+                <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">☰<span class="sr-only">Abrir menu</span></button>
+            </div>
+            <nav id="primary-menu" aria-label="Principal" class="main-nav">
+                <ul>
+                    <li><a href="inicio.html">Início</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="roupa.html">Roupas</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Introdução da página -->
+            <section class="page-hero container">
+                <div class="page-intro">
+                    <h2>Explore nossa loja</h2>
+                    <p>Filtre por categoria e descubra peças confortáveis, modernas e com mensagens inspiradoras.</p>
+                </div>
+            </section>
+
+            <!-- Lista de produtos renderizada por JavaScript -->
+            <section class="products container" aria-labelledby="produtos-title">
+                <div class="filters">
+                    <label for="cat">Categoria</label>
+                    <select id="cat">
+                        <option value="all">Todas</option>
+                        <option value="camiseta">Camisetas</option>
+                        <option value="moletom">Moletom</option>
+                        <option value="bone">Bonés</option>
+                        <option value="acessorio">Acessórios</option>
+                    </select>
+                </div>
+
+                <h3 id="produtos-title">Produtos em destaque</h3>
+                <div class="product-grid" id="product-grid" data-category="all" aria-live="polite"></div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="container footer-inner">
+                <div>
+                    <h4>JIREH</h4>
+                    <p>© 2026 JIREH</p>
+                </div>
+            </div>
+        </footer>
+
+        <script src="script.js"></script>
+        <script>
+            // Conecta o select de categoria com a renderização
+            document.getElementById('cat').addEventListener('change', function(){
+                const grid = document.getElementById('product-grid');
+                if(!grid || !window.products) return;
+                renderProducts(grid, window.products, this.value);
+            });
+        </script>
+    </body>
+</html>
